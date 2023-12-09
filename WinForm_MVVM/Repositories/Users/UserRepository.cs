@@ -26,6 +26,10 @@ namespace WinForm_MVVM.Repositories.Users
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// ユーザー取得
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<User> GetUsers()
         {
             using (var conn = SqlConn.CreateConnection())
@@ -39,6 +43,22 @@ namespace WinForm_MVVM.Repositories.Users
         public void UpdateUser(User user)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// ユーザー認証
+        /// </summary>
+        /// <param name="loginUser"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool ValidateUser(LoginUser loginUser)
+        {
+            using (var conn = SqlConn.CreateConnection())
+            {
+                var query = SqlConn.GetQueryFactory(conn);
+                var user = query.Query("M_USER").Where("USER_ID", loginUser.UserId).Where("PASSWORD", loginUser.Password).FirstOrDefault<User>();
+                return user is not null;
+            }
         }
     }
 }

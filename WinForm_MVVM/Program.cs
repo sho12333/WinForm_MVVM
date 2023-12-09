@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms.Design;
 using WinForm_MVVM.Repositories.Users;
 using WinForm_MVVM.Services.Messages;
+using WinForm_MVVM.Views;
 
 namespace WinForm_MVVM
 {
@@ -22,13 +23,16 @@ namespace WinForm_MVVM
             ConfigureServices(services);
             ServiceProvider serviceProvider = services.BuildServiceProvider();
 
-            MainView view = serviceProvider.GetRequiredService<MainView>();
+            LoginView view = serviceProvider.GetRequiredService<LoginView>();
             Application.Run(view);
         }
 
         private static void ConfigureServices(ServiceCollection services)
         {
-            services.AddSingleton<MainView>();
+            services.AddSingleton<UserView>();
+            services.AddSingleton<LoginView>();
+            services.AddSingleton<BaseView>();
+
             services.AddScoped<IMessageService, MessageService>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<SqlConnection>(option => new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString));

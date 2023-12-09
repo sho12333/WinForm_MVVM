@@ -1,6 +1,6 @@
 ﻿namespace WinForm_MVVM
 {
-    partial class MainView
+    partial class UserView
     {
         /// <summary>
         ///  Required designer variable.
@@ -68,13 +68,13 @@
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(12, 44);
             panel1.Name = "panel1";
-            panel1.Size = new Size(860, 94);
+            panel1.Size = new Size(970, 94);
             panel1.TabIndex = 1;
             // 
             // btnClear
             // 
             btnClear.Font = new Font("Yu Gothic UI", 14.25F);
-            btnClear.Location = new Point(763, 58);
+            btnClear.Location = new Point(865, 58);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(94, 33);
             btnClear.TabIndex = 8;
@@ -85,7 +85,7 @@
             // 
             btnSearch.BackColor = Color.PowderBlue;
             btnSearch.Font = new Font("Yu Gothic UI", 14.25F);
-            btnSearch.Location = new Point(669, 58);
+            btnSearch.Location = new Point(771, 58);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(94, 33);
             btnSearch.TabIndex = 7;
@@ -145,7 +145,7 @@
             dgvUser.Columns.AddRange(new DataGridViewColumn[] { UserIdColumn, UserNameColumn, MailAddressColumn });
             dgvUser.Location = new Point(3, 3);
             dgvUser.Name = "dgvUser";
-            dgvUser.Size = new Size(854, 395);
+            dgvUser.Size = new Size(967, 395);
             dgvUser.TabIndex = 0;
             // 
             // UserIdColumn
@@ -173,7 +173,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(884, 560);
+            ClientSize = new Size(984, 560);
             Controls.Add(panel4);
             Controls.Add(panel1);
             Controls.Add(lblTitle);

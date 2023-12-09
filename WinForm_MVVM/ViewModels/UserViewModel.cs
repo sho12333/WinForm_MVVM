@@ -10,16 +10,16 @@ using WinForm_MVVM.Services.Messages;
 
 namespace WinForm_MVVM.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public class UserViewModel : ViewModelBase
     {
         private IMessageService _messageService;
 
         private IUserRepository _userRepository;
 
-        public MainViewModel() : this(new MessageService(), new UserRepository())
+        public UserViewModel() : this(new MessageService(), new UserRepository())
         { }
 
-        public MainViewModel(IMessageService messageService, IUserRepository userRepisitory)
+        public UserViewModel(IMessageService messageService, IUserRepository userRepisitory)
         {
             this._messageService = messageService;
             this._userRepository = userRepisitory;

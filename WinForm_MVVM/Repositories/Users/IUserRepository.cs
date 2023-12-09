@@ -18,5 +18,7 @@ namespace WinForm_MVVM.Repositories.Users
         void UpdateUser(User user);
 
         void DeleteUser(string id);
+
+        bool ValidateUser(LoginUser loginUser);
     }
 }

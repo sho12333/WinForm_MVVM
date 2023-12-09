@@ -2,11 +2,11 @@ using WinForm_MVVM.ViewModels;
 
 namespace WinForm_MVVM
 {
-    public partial class MainView : Form
+    public partial class UserView : Form
     {
-        private MainViewModel _viewModel = new MainViewModel();
+        private UserViewModel _viewModel = new UserViewModel();
 
-        public MainView()
+        public UserView()
         {
             InitializeComponent();
 

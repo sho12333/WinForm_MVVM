@@ -11,11 +11,14 @@ namespace WinForm_MVVM.ViewModels
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
+        /// <summary>
+        /// 画面タイトル
+        /// </summary>
         private string _title = string.Empty;
 
         public string Title
         {
-            get { return _title; }
+            get => _title;
             set
             {
                 SetProperty(ref _title, value);
@@ -35,11 +38,6 @@ namespace WinForm_MVVM.ViewModels
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
             return true;
-        }
-
-        public virtual DateTime GetDateTime()
-        {
-            return DateTime.Now;
         }
     }
 }
